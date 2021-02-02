@@ -76,6 +76,7 @@
         'Connect-CoinbaseProAPI'
         'Get-CoinbaseAccount'
         'Get-CoinbaseProAccount'
+        'Get-CoinbaseProOrder'
         'Get-CoinbaseAccountBuy'
         'Get-CoinbaseAccountDeposit'
         'Get-CoinbaseAccountSell'

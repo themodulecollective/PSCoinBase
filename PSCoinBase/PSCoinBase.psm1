@@ -17,6 +17,7 @@ $Script:ModuleFiles = @(
   $(Join-Path -Path $functions -ChildPath 'Get-CBAccessTimeStamp.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccount.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProAccount.ps1')
+  $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProOrder.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountBuy.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountDeposit.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountSell.ps1')
