@@ -3,10 +3,18 @@
 # Module Variables
 ###############################################################################################
 $ModuleVariables = @{
-  'PSCoinBaseConfiguration'   = $null
-  'CoinbaseAPITimeServiceURI' = 'https://api.coinbase.com/v2/time'
-  'CoinBaseAPIURI'            = 'https://api.coinbase.com'
-  'CoinBaseAPIVersion'        = '2019-11-15'
+  'PSCoinBaseConfiguration'      = $null
+  'CoinbaseAPITimeServiceURI'    = 'https://api.coinbase.com/v2/time'
+  'CoinBaseAPIURI'               = 'https://api.coinbase.com'
+  'CoinBaseAPIVersion'           = '2019-11-15'
+  'CoinBaseAPIPublicKey'         = $null
+  'CoinBaseAPIPrivateKey'        = $null
+  'CoinbaseProAPITimeServiceURI' = 'https://api.pro.coinbase.com/time'
+  'CoinBaseProAPIURI'            = 'https://api.pro.coinbase.com'
+  'CoinBaseProAPIVersion'        = ''
+  'CoinBaseProAPIPublicKey'      = $null
+  'CoinBaseProAPIPrivateKey'     = $null
+  'CoinBaseProAPIPassPhrase'     = $null
 }
 
 $ModuleVariables.getenumerator().ForEach( { Set-Variable -Scope Script -Name $_.name -Value $_.value })

@@ -1,4 +1,4 @@
-function Connect-CoinbaseAPI
+function Connect-CoinbaseProAPI
 {
     [CmdletBinding()]
     param(
@@ -14,10 +14,19 @@ function Connect-CoinbaseAPI
             Mandatory = $true,
             ValueFromPipeline = $true,
             ValueFromPipelineByPropertyName = $true,
-            Position = 0
+            Position = 1
         )]
         [securestring]$PrivateKey
+        ,
+        [Parameter(
+            Mandatory = $true,
+            ValueFromPipeline = $true,
+            ValueFromPipelineByPropertyName = $true,
+            Position = 2
+        )]
+        [securestring]$PassPhrase
     )
-    $Script:CoinBaseAPIPublicKey = $PublicKey
-    $Script:CoinBaseAPIPrivateKey = $PrivateKey
+    $Script:CoinBaseProAPIPublicKey = $PublicKey
+    $Script:CoinBaseProAPIPrivateKey = $PrivateKey
+    $Script:CoinBaseProAPIPassPhrase = $PassPhrase
 }

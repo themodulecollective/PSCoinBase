@@ -21,7 +21,7 @@ function Invoke-CBRequest
         $CBAccessSign = Get-CBAccessSign -message $preHash
         $URI = $script:CoinBaseAPIURI + $request.url
         $Headers = @{
-            "CB-ACCESS-KEY"       = $Script:PublicKey
+            "CB-ACCESS-KEY"       = $Script:CoinBaseAPIPublicKey
             "CB-ACCESS-SIGN"      = $CBAccessSign
             "CB-ACCESS-TIMESTAMP" = $timestamp
             "CB-Version"          = $script:CoinBaseAPIVersion

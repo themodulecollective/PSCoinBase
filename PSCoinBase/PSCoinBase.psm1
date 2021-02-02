@@ -12,9 +12,11 @@ $Script:ModuleFiles = @(
   $(Join-Path -Path $Scripts -ChildPath 'Initialize.ps1')
   # Load Functions
   $(Join-Path -Path $functions -ChildPath 'Connect-CoinbaseAPI.ps1')
+  $(Join-Path -Path $functions -ChildPath 'Connect-CoinbaseProAPI.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CBAccessSign.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CBAccessTimeStamp.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccount.ps1')
+  $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProAccount.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountBuy.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountDeposit.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountSell.ps1')
@@ -30,6 +32,7 @@ $Script:ModuleFiles = @(
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbasePrice.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseUser.ps1')
   $(Join-Path -Path $functions -ChildPath 'Invoke-CBRequest.ps1')
+  $(Join-Path -Path $functions -ChildPath 'Invoke-CBProRequest.ps1')
   $(Join-Path -Path $functions -ChildPath 'Test-CBAPIKeysProvided.ps1')
   # Finalize / Run any Module Functions defined above
   $(Join-Path -Path $Scripts -ChildPath 'RunFunctions.ps1')

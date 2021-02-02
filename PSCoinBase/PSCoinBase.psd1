@@ -12,7 +12,7 @@
     RootModule           = '.\PSCoinBase.psm1'
 
     # Version number of this module.
-    ModuleVersion        = '0.0.1'
+    ModuleVersion        = '0.0.2'
 
     # Supported PSEditions
     CompatiblePSEditions = @('Desktop', 'Core')
@@ -73,7 +73,9 @@
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
     FunctionsToExport    = @(
         'Connect-CoinbaseAPI'
+        'Connect-CoinbaseProAPI'
         'Get-CoinbaseAccount'
+        'Get-CoinbaseProAccount'
         'Get-CoinbaseAccountBuy'
         'Get-CoinbaseAccountDeposit'
         'Get-CoinbaseAccountSell'
