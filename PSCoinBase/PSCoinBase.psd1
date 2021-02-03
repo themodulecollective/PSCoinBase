@@ -15,7 +15,7 @@
     ModuleVersion        = '0.0.2'
 
     # Supported PSEditions
-    CompatiblePSEditions = @('Desktop', 'Core')
+    CompatiblePSEditions = @('Core') #Invoke-RestMethod -ResponseHeaders in use
 
     # ID used to uniquely identify this module
     GUID                 = '91db832f-9f1e-4288-8f3e-01fe2b738b28'
@@ -76,6 +76,7 @@
         'Connect-CoinbaseProAPI'
         'Get-CoinbaseAccount'
         'Get-CoinbaseProAccount'
+        'Get-CoinbaseProAccountLedger'
         'Get-CoinbaseProOrder'
         'Get-CoinbaseAccountBuy'
         'Get-CoinbaseAccountDeposit'

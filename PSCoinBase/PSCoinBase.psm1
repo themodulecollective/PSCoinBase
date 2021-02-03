@@ -1,4 +1,4 @@
-#Requires -Version 5.1
+#Requires -Version 6
 
 $ModuleFolder = Split-Path $PSCommandPath -Parent
 
@@ -17,6 +17,7 @@ $Script:ModuleFiles = @(
   $(Join-Path -Path $functions -ChildPath 'Get-CBAccessTimeStamp.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccount.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProAccount.ps1')
+  $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProAccountLedger.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProOrder.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountBuy.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountDeposit.ps1')
