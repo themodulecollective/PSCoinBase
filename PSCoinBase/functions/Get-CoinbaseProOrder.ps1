@@ -66,6 +66,6 @@ function Get-CoinbaseProOrder
     }
 
 
-    Invoke-CBProRequest -Request $request
+    Invoke-CBProRequest -Request $request -Paginated
 
 }
