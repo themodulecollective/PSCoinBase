@@ -22,3 +22,5 @@ Currently this module includes commands for most (perhaps all) of the read capab
 Develop read functions for CoinbasePro API.
 Eventually may include functions for non-read operations but that is lower priority at the moment.
 Considering addition of OAUTH for authentication for scenarios where this module might be integrated with a web front end using something like UniversalDashboard.
+
+Implement a [websocket connection for CoinbasePro](https://stackoverflow.com/questions/40257671/how-to-use-a-websocket-client-to-open-a-long-lived-connection-to-a-url-using-po)

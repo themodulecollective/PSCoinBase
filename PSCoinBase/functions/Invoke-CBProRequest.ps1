@@ -11,11 +11,14 @@ function Invoke-CBProRequest
         [pscustomobject]$Request
         ,
         [bigint]$ResultSize = 100
+        ,
+        [switch]$Paginated
     )
 
     $PageSize = 100
     Test-CBAPIKeysProvided -Pro
-    if ($ResultSize -lt $PageSize)
+    $SpinAgain = $false
+    if ($ResultSize -lt $PageSize -and $Paginated)
     {
         switch ($Request.url -like '*`?*')
         {
@@ -30,9 +33,10 @@ function Invoke-CBProRequest
                 #$Request.url = $Request.url + "?limit=$PageSize"
             }
         }
+        $TotalResultCount = 0
+        $SpinAgain = $true
     }
-    $TotalResultCount = 0
-    $SpinAgain = $true
+
     do
     {
         $timeStamp = Get-CBAccessTimeStamp #-Pro -UseAPITimeService
@@ -62,30 +66,38 @@ function Invoke-CBProRequest
         try
         {
             $Response = Invoke-RestMethod @IRMParams
-            $TotalResultCount += $Response.count
-            switch ($Response.count)
+            if ($Paginated)
             {
-                {$_ -eq $PageSize -and $TotalResultCount -lt $ResultSize}
+                $TotalResultCount += $Response.count
+                switch ($Response.count)
                 {
-                    $SpinAgain = $true
-                    $after = $ResponseHeaders.'Cb-after'
-                    $Response
+                    { $_ -eq $PageSize -and $TotalResultCount -lt $ResultSize }
+                    {
+                        $SpinAgain = $true
+                        $after = $ResponseHeaders.'Cb-after'
+                        $Response
+                    }
+                    { $_ -lt $PageSize }
+                    {
+                        $SpinAgain = $false
+                        $Response
+                    }
+                    { $TotalResultCount -ge $ResultSize }
+                    {
+                        $DiscardResults = $TotalResultCount - $ResultSize
+                        $SpinAgain = $false
+                        $Response[0..$($Response.count - $DiscardResults)]
+                    }
+                    Default
+                    {
+                        $SpinAgain = $false
+                    }
                 }
-                {$_ -lt $PageSize}
-                {
-                    $SpinAgain = $false
-                    $Response
-                }
-                {$TotalResultCount -ge $ResultSize}
-                {
-                    $DiscardResults = $TotalResultCount - $ResultSize
-                    $SpinAgain = $false
-                    $Response[0..$($Response.count - $DiscardResults)]
-                }
-                Default
-                {
-                    $SpinAgain = $false
-                }
+
+            }
+            else
+            {
+                $Response
             }
         }
         catch

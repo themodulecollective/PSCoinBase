@@ -14,6 +14,6 @@ function Get-CoinbaseProAccountHold
         method = 'GET'
     }
 
-    Invoke-CBProRequest -Request $request -ResultSize $ResultSize
+    Invoke-CBProRequest -Request $request -ResultSize $ResultSize -Paginated
 
 }
