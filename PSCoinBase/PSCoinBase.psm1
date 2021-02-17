@@ -18,6 +18,8 @@ $Script:ModuleFiles = @(
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccount.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProAccount.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProAccountLedger.ps1')
+  $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProAccountHold.ps1')
+  $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProProductTicker.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseProOrder.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountBuy.ps1')
   $(Join-Path -Path $functions -ChildPath 'Get-CoinbaseAccountDeposit.ps1')

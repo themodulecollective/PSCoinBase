@@ -77,6 +77,8 @@
         'Get-CoinbaseAccount'
         'Get-CoinbaseProAccount'
         'Get-CoinbaseProAccountLedger'
+        'Get-CoinbaseProAccountHold'
+        'Get-CoinbaseProProductTicker'
         'Get-CoinbaseProOrder'
         'Get-CoinbaseAccountBuy'
         'Get-CoinbaseAccountDeposit'
