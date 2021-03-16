@@ -2,6 +2,8 @@ function Get-CoinbaseProAccount
 {
     [CmdletBinding()]
     param(
+        [parameter()]
+        [Alias('ID')]
         [string]$AccountID
     )
 
